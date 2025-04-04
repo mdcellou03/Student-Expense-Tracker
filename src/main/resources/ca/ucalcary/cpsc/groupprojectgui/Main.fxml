@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.ucalcary.cpsc.groupprojectgui.MainController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#load" text="Load" />
+                        <MenuItem mnemonicParsing="false" onAction="#save" text="Save" />
+                        <MenuItem mnemonicParsing="false" onAction="#exit" text="close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#addStudent" text="Add student" />
+                        <MenuItem mnemonicParsing="false" onAction="#addSchool" text="Add School" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#about_Info" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <left>
+        <VBox prefHeight="433.0" prefWidth="154.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="studentId" prefHeight="30.0" prefWidth="154.0" promptText="Student ID" VBox.vgrow="ALWAYS" />
+                <TextField fx:id="schoolName" prefHeight="30.0" prefWidth="154.0" promptText="School Name" />
+                <Button mnemonicParsing="false" onAction="#addStudentToSchool" prefHeight="30.0" prefWidth="154.0" text="Add Student to school" textFill="#001febf2" />
+                <TextField fx:id="groceryId" prefHeight="30.0" prefWidth="154.0" promptText="Student ID" />
+                <TextField fx:id="groceryAmount" prefHeight="30.0" prefWidth="154.0" promptText="Amount" />
+                <TextField fx:id="discount" prefHeight="30.0" prefWidth="154.0" promptText="Discount" />
+                <Button mnemonicParsing="false" onAction="#addGroceryExpense" prefHeight="30.0" prefWidth="154.0" text="Add grocery expense" textFill="#001feb" />
+                <TextField fx:id="tuitionId" prefHeight="30.0" prefWidth="154.0" promptText="Student ID" />
+                <TextField fx:id="tuitionAmount" prefHeight="30.0" prefWidth="154.0" promptText="Amount" />
+                <TextField fx:id="scholarship" prefHeight="30.0" prefWidth="154.0" promptText="Scholarship" />
+                <Button mnemonicParsing="false" onAction="#addTuitionExpense" prefHeight="30.0" prefWidth="154.0" text="Add tuition expense" textFill="#001feb" />
+                <TextField fx:id="rentId" prefHeight="30.0" prefWidth="154.0" promptText="Student ID" />
+                <TextField fx:id="rentAmount" prefHeight="30.0" prefWidth="154.0" promptText="Amount" />
+                <TextField fx:id="utilitiesAmount" prefHeight="30.0" prefWidth="154.0" promptText="Utilities Amount" />
+                <Button mnemonicParsing="false" onAction="#addRentExpense" prefHeight="30.0" prefWidth="154.0" text="Add rent expense" textFill="#001feb" />
+            </children>
+        </VBox>
+    </left>
+    <bottom>
+        <HBox prefHeight="114.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="status_Label" alignment="CENTER" contentDisplay="CENTER" prefHeight="86.0" prefWidth="645.0" text="Status" HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+    </bottom>
+    <right>
+        <VBox prefHeight="342.0" prefWidth="166.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="info_StudentId" prefHeight="30.0" prefWidth="166.0" promptText="Student ID" />
+                <Button mnemonicParsing="false" onAction="#studentInfo" prefHeight="30.0" prefWidth="166.0" text="Student Info" textFill="#001feb" />
+                <Button mnemonicParsing="false" onAction="#highestSpender" prefHeight="30.0" prefWidth="166.0" text="Highest Spender" textFill="#001feb" />
+                <Button mnemonicParsing="false" onAction="#averageSpending" prefHeight="30.0" prefWidth="166.0" text="Average spending by school" textFill="#001feb" />
+                <Button mnemonicParsing="false" onAction="#cheapestSchool" prefHeight="30.0" prefWidth="166.0" text="Cheapest school" textFill="#001feb" />
+                <TextField fx:id="schoolToShow_Name" prefHeight="30.0" prefWidth="166.0" promptText="schoolToShow_Name" />
+                <Button mnemonicParsing="false" onAction="#studentsBySchool" prefHeight="30.0" prefWidth="166.0" text="Students in specific school" textFill="#001feb" />
+            </children>
+        </VBox>
+    </right>
+    <center>
+        <SplitPane dividerPositions="0.5036407766990292" prefHeight="331.0" prefWidth="277.0" BorderPane.alignment="TOP_CENTER">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <ScrollPane layoutX="-1.0" layoutY="-1.0" prefHeight="461.0" prefWidth="239.0">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="460.0" prefWidth="239.0">
+                                    <children>
+                                        <TextArea fx:id="studentsLabel" prefHeight="445.0" prefWidth="223.0">
+                                            <effect>
+                                                <SepiaTone />
+                                            </effect></TextArea>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="121.0">
+                    <children>
+                        <ScrollPane layoutX="1.0" prefHeight="458.0" prefWidth="233.0">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="441.0" prefWidth="232.0">
+                                    <children>
+                                        <TextArea fx:id="schoolData" prefHeight="442.0" prefWidth="232.0">
+                                            <effect>
+                                                <SepiaTone />
+                                            </effect></TextArea>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>
